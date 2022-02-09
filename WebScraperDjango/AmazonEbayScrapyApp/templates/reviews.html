@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/reviews.css' %}"
+    />
+
+    <title>Amazon products</title>
+  </head>
+  <body>
+        <h1 style="text-align: center;">Reviews of id {{ data.0.1 }} {{ name.0.1 }}</h1>
+        <div>
+          <div class="page-wrapper">
+            <div class="wrapper">
+              <div class="form form-d">
+                <div class="form-heading">
+                  <h2 class="title">Positive reviews</h2>
+                </div>
+                <div class="form-body">
+
+                  {% for rev in positive_review %}
+                  <div class="form-row">
+                        <div class="value">
+                            <li> {{ rev }}</li>
+                            <br/>
+                        </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+            <div class="page-wrapper">
+              <div class="wrapper">
+                <div class="form form-d">
+                  <div class="form-heading">
+                    <h2 class="title">Negative reviews</h2>
+                  </div>
+                  <div class="form-body">
+                    {% for rev in negative_review %}
+                    <div class="form-row">
+                          <div class="value">
+                              <li> {{ rev }}</li>
+                              <br/>
+                          </div>
+
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="page-wrapper">
+              <div class="wrapper">
+                <div class="form form-d">
+                  <div class="form-heading">
+                    <h2 class="title">Unlabelled reviews</h2>
+                  </div>
+                  <div class="form-body">
+
+                    {% for rev in unlabelled_review %}
+                    <div class="form-row">
+                          <div class="value">
+                              <li> {{ rev }}</li>
+                              <br/>
+                          </div>
+
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

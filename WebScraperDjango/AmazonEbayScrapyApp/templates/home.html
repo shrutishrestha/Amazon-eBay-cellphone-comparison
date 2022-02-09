@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/home.css' %}"
+    />
+
+     <title>Amazon products</title>
+  </head>
+  <body>
+    <h1>Amazon Samsung Phone Details</h1>
+      <table id="formTable" style="padding: 1%;">
+        <tr>
+          <th className="first-col">Mobile Name</th>
+          <th className="first-col">Price</th>
+          <th className="first-col">Rating</th>
+          <th className="first-col">Operating System</th>
+          <th className="first-col">Display Size</th>
+          <th className="first-col">Memory Size</th>
+           <th className="first-col">Model Number </th>
+          <th>Compare with Ebay</th>
+        </tr>
+
+        {% for phone in data %}
+        <tr>
+          <td>
+            <p className="table-data"> {{ phone.1 }}</p>
+          </td>
+          <td>
+            <br />
+              <p className="table-data">£{{ phone.2 }}</p>
+          </td>
+          <td>
+            <br />
+            {% if phone.5 == "N/A" %}
+            <p className="table-data"><a>{{ phone.5 }}</a></p>
+            {% else %}
+               <p className="table-data"><a href="{% url 'phone_review' phone.0  %}">{{ phone.5 }}</a></p>
+            {% endif %}
+           </td>
+          <td>
+            <br />
+            <br />
+              <p className="table-data">{{ phone.12 }}</p>
+          </td>
+          <td>
+            <br />
+            <br />
+            <p className="table-data">{{ phone.9 }}</p>
+          </td>
+           <td>
+            <br />
+            <br />
+            <p className="table-data">{{ phone.11 }}</p>
+          </td>
+          <td>
+            <br />
+            <br />
+            <p className="table-data">{{ phone.4}}</p>
+          </td>
+           <td>
+            <br />
+            <br />
+          <div >
+            <a href="{% url 'phone_compare' phone.0  %}">Compare</a>
+          </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+
+  </body>
+</html>

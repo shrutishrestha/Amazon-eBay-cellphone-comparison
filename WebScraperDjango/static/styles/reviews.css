@@ -1,0 +1,69 @@
+body{
+    background: #5cdb95;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 20px 44px 1px 44px;
+}
+
+.form-row .name {
+    width: 188px;
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 33px;
+}
+
+.page-wrapper {
+    min-height: 10vh;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+    .title {
+        padding: 0 15px;
+        font-size: 9vw;
+    }
+
+    .form-d .form-body {
+        background: #fff;
+        position: relative;
+        border-bottom: none;
+        padding: 5px 0;
+        width: 5em;
+        left: 4%;
+    }
+
+    .name {
+        margin-top: 1.4em !important;
+    }
+
+    .form-row {
+        display: block;
+        padding: 0px 0px 0px 25px;
+
+        .name,
+        .value {
+          display: block;
+          width: 100%;
+        }
+    }
+}
